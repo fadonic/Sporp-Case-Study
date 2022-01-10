@@ -5,7 +5,7 @@ const getPosts = (userId, postIds) => {
   //loop through each post in collection and process further
   let results = []
   for (let postRow of postsList) {
-    let userInfoObj = getUserInfo(postRow.userId) // get owner object with the corresponding id
+    let userInfoObj = getUserInfo(postRow.user_id) // get owner object with the corresponding id
     postRow.owner = userInfoObj // update postRow owner property with the returned object
 
     let userWithIdlikedThePost = checkIfUserWithGivenIdLikedThePost(
