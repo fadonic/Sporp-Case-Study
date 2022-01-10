@@ -1,3 +1,8 @@
+/*
+overall run time and space complexity of mergePosts()  
+time compexity is O(n*m) 
+space complexity is O(n)
+*/
 const mergePosts = posts => {
   let duplicatePosts = []
   let uniquePosts = []
@@ -14,10 +19,14 @@ const mergePosts = posts => {
       memo[postItem.id] = true
     }
   }
-  sortPosts(uniquePosts) // O(nlogn)
-  return uniquePosts // overal time compexity is O(n*m) + O(n) + O(nlogn) = O(n*m) upper bound, while the space complexity is O(3n)=>O(n) ignoring constant
+  sortPosts(uniquePosts)
+  return uniquePosts // overall time compexity is O(n*m) + O(n) + O(nlogn) = O(n*m) upper bound, while the space complexity is O(3n)=>O(n) ignoring constant
 }
 
+/*
+time complexity = O(nlog n) 
+space complexity = constant space O(1)
+*/
 const sortPosts = posts => {
   posts.sort((a, b) => {
     if (a.created_at > b.created_at) {
@@ -33,9 +42,13 @@ const sortPosts = posts => {
       return 1
     }
     return 0
-  }) // O(nlog n) complexity and constant space O(1)
+  })
 }
 
+/*
+=================
+test driver
+*/
 console.log(
   mergePosts([
     [
